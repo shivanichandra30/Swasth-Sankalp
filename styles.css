@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Allan&family=Cedarville+Cursive&family=Croissant+One&family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+/* Section Styles */
+.section-p1 {
+  padding: 40px 0;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+/* Button Styles */
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+button.normal:hover {
+  background-color: #088178;
+  color: #fff;
+}
+
+/* Body Styles */
+body {
+  width: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #041e42;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-list-nav ul {
+  display: flex;
+}
+
+.header-list-nav ul li {
+  list-style-type: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+.header-list-nav ul a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.header-list-nav ul a:hover,
+.header-list-nav ul a.active {
+  color: #fff;
+}
+
+.header-list-icon a {
+  color: #fff;
+  padding-left: 20px;
+  transition: 0.3s ease;
+}
+
+.header-list-icon a:hover,
+.header-list-nav ul a.active {
+  color: #088178;
+}
+
+.header-list-nav ul li a:hover::after,
+.header-list-nav ul li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+/* Header Logo */
+#LOGO {
+  width: 75px;
+  height: 75px;
+}
+
+/* Main Section Styles */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.image-container {
+  flex: 1;
+  background: url('images/homepage.jpeg') center/cover no-repeat;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-section {
+  width: 100%;
+  text-align: center;
+}
+
+.role-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.role-button {
+  margin: 10px 0;
+  padding: 15px 60px; /* Increased button size */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Add your global styles here */
+
+/* Add specific styles for the signup page if needed */
+.signup-form {
+  width: 400px; /* Increase the width as needed */
+  padding: 30px; /* Adjust padding */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Adjust margin */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Adjust margin */
+}
+
+input {
+  width: 100%;
+  padding: 15px; /* Increase padding for larger input boxes */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Adjust border-radius */
+  box-sizing: border-box;
+  margin-bottom: 15px; /* Adjust margin */
+}
+
+.signup-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signup-button {
+  padding: 15px 30px; /* Increase padding for larger button */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Adjust border-radius */
+  cursor: pointer;
+}
+
+p {
+  margin-top: 20px; /* Adjust margin */
+  text-align: center;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-form {
+  width: 400px; /* Adjust the width as needed */
+  padding: 30px; /* Adjust padding */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+}
+
+/* Dashboard styles */
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.dashboard-left,
+.dashboard-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.dashboard-left img,
+.dashboard-right img {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-bottom: 20px;
+}
+
+.dashboard-left button,
+.dashboard-right .dropbtn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dashboard-left button:hover,
+.dashboard-right .dropbtn:hover {
+  background-color: #088178;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Newsletter Section Styles */
+#newsletter {
+  background-image: url(images/banner/b14.png);
+  background-repeat: no-repeat;
+  background-position: 180px;
+  background-color: #041e42;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 75px;
+}
+
+#newsletter .newsletter-text h3 {
+  color: white;
+  font-size: 30px;
+  padding: 0 0 15px 0;
+}
+
+#newsletter .newsletter-text h5 {
+  color: rgb(151, 151, 151);
+  font-size: 17px;
+}
+
+#newsletter .newsletter-text h5 span {
+  color: rgb(216, 182, 29);
+}
+
+#newsletter .form input {
+  padding: 20px;
+  width: 350px;
+  height: 56px;
+  background-color: #d1d0d0;
+  border-radius: 6px 0 0 6px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  margin-right: -4px;
+  margin-top: 1px;
+}
+
+#newsletter .form button {
+  margin-left: 0;
+  padding: 20px;
+  border: none;
+  width: 120px;
+  background-color: #088178;
+  color: white;
+  font-size: 17px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+/* footer section styles */
+
+#footer{
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 75px;
+  background-color: #ececec;
+}
+#footer div{
+  
+}
+#footer p, #footer a{
+  color: rgb(109, 109, 109);
+  text-decoration: none;
+}
+#footer a:hover{
+  color:#088178;
+}
+#footer .about a{
+  display: block;
+  padding:8px 0;
+}
+#footer .myaccount a{
+  display: block;
+  padding:8px 0;
+}
+#footer .download img{
+  border: 1px solid #08817969;
+  border-radius: 7px;
+}

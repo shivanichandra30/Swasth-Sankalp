@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="appbooking.css">
+    <title>HealthCare</title>
+</head>
+<body>
+    <header>
+        <div id="header">
+          <div class="header-logo">
+            <img src="images/SwasthsankalpLogo.png" alt="LOGO Here" id="LOGO" />
+          </div>
+          <div class="header-list">
+            <nav class="header-list-nav">
+              <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a>Specialities</a></li>
+                <li><a >Procedures</a></li>
+                <li><a href="info.html">Insurance</a></li>
+                <li><a >About Us</a></li>
+              </ul>
+            </nav>
+            <div class="header-list-icon">
+              <a href=""><i class="fa fa-search"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <br><br><br><br><br><br><br><br>
+      <main>
+        <div class="container">
+            <h1>Book an Appointment</h1>
+            <form>
+                <label for="doctorSelect">Select a Doctor:</label>
+                <select id="doctorSelect" onchange="loadDates()">
+                    <option value="" disabled selected>Select a doctor</option>
+                    <option value="drSmith">Dr. Smith</option>
+                    <option value="drJohnson">Dr. Johnson</option>
+                    <!-- Add more doctors as needed -->
+                </select>
+    
+                <label for="dateSelect">Select a Date:</label>
+                <select id="dateSelect" onchange="loadTimeSlots()">
+                    <!-- Dates will be dynamically loaded here -->
+                </select>
+    
+                <label for="timeSlotSelect">Select a Time Slot:</label>
+                <select id="timeSlotSelect">
+                    <!-- Time slots will be dynamically loaded here -->
+                </select>
+    
+                <button type="submit" onclick="submitAppointment(event)">Book Appointment</button>
+            </form>
+        </div>
+    <br><br>
+        <script>
+            function loadDates() {
+        const dateSelect = document.getElementById('dateSelect');
+        const doctorSelect = document.getElementById('doctorSelect');
+    
+        // Clear previous dates
+        dateSelect.innerHTML = '';
+    
+        // Simulated dates (replace with actual data from the server)
+        const dates = {
+            drSmith: ['2023-01-01', '2023-01-02', '2023-01-03'],
+            drJohnson: ['2023-01-04', '2023-01-05', '2023-01-06'],
+            // Add more doctors and dates as needed
+        };
+    
+        const selectedDoctor = doctorSelect.value;
+    
+        if (selectedDoctor && dates[selectedDoctor]) {
+            dates[selectedDoctor].forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = date;
+                dateSelect.appendChild(option);
+            });
+        } else {
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            defaultOption.textContent = 'Select a date';
+            dateSelect.appendChild(defaultOption);
+        }
+    
+        // Trigger loading time slots when the date changes
+        loadTimeSlots();
+    }
+    
+    function loadTimeSlots() {
+        const dateSelect = document.getElementById('dateSelect');
+        const timeSlotSelect = document.getElementById('timeSlotSelect');
+    
+        // Clear previous time slots
+        timeSlotSelect.innerHTML = '';
+    
+        // Simulated time slots (replace with actual data from the server)
+        const timeSlots = {
+            drSmith: {
+                '2023-01-01': ['09:00 AM', '10:00 AM', '02:00 PM', '03:00 PM'],
+                '2023-01-02': ['11:00 AM', '01:00 PM', '04:00 PM', '05:00 PM'],
+                // Add more dates and time slots as needed
+            },
+            drJohnson: {
+                '2023-01-04': ['09:30 AM', '11:30 AM', '02:30 PM', '04:30 PM'],
+                '2023-01-05': ['10:00 AM', '01:00 PM', '03:00 PM', '05:00 PM'],
+                // Add more dates and time slots as needed
+            },
+            // Add more doctors as needed
+        };
+    
+        const selectedDoctor = document.getElementById('doctorSelect').value;
+        const selectedDate = dateSelect.value;
+    
+        if (selectedDoctor && selectedDate && timeSlots[selectedDoctor] && timeSlots[selectedDoctor][selectedDate]) {
+            timeSlots[selectedDoctor][selectedDate].forEach(slot => {
+                const option = document.createElement('option');
+                option.value = slot;
+                option.textContent = slot;
+                timeSlotSelect.appendChild(option);
+            });
+        } else {
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            defaultOption.textContent = 'Select a time slot';
+            timeSlotSelect.appendChild(defaultOption);
+        }
+    }
+        </script>
+
+        <section id="newsletter">
+            <div class="newsletter-text">
+              <h3>Sign Up For Newsletters</h3>
+              <h5>get e-mail updates about out latest shop and <span>special offers</span></h5>
+            </div>
+            <div class="form">
+              <input type="email" placeholder="Your email address" id="email-address-input">
+              <button>Sign Up</button>
+            </div>
+          </section>
+          
+      </main>
+
+      <footer>
+        <div id="footer">
+          <div class="contact">
+            <a href="indext.html"><img src="images/logo.png" alt="" /></a>
+            <br> <br>
+            <br> 
+            <h3>Contact</h3>
+            <address>
+              <p><b>Address:</b> Wellington Road, Street 32. San Francisco</p>
+              <p><b>Phone:</b> Wellington Road, Street 32. San Francisco</p>
+              <p><b>Hours</b> 10:00 - 18:00. Mon - Sat</p>
+            </address>
+            <h3>Follow Us</h3>
+            <br> 
+            <div class="socials">
+              <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="about">
+            <h3>About</h3>
+            <br> 
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+          </div>
+          <div class="myaccount ">
+            <h3>My account</h3>
+            <br> 
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+          </div>
+          <div class="install">
+            <h3>Install App</h3>
+            <br> 
+            <p>From App Store or Google Play</p>
+            <div class="download">
+              <a href="#"><img src="images/pay/app.jpg" alt=""></a>
+              <a href="#"><img src="images/pay/play.jpg" alt=""></a>
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay/pay.png" alt="">
+          </div>
+          
+        </div>
+      </footer>
+      <script>
+        function submitAppointment(event) {
+
+    event.preventDefault();
+
+    // Get selected values
+    const selectedDoctor = document.getElementById('doctorSelect').value;
+    const selectedDate = document.getElementById('dateSelect').value;
+    const selectedTimeSlot = document.getElementById('timeSlotSelect').value;
+
+    // Insert appointment into the database using AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'insert_appointment.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Display confirmation and redirect to dashboard
+            var isConfirmed = window.confirm('Your appointment is booked successfully');
+          
+                window.location.href = 'dashboard.php';
+            
+        }
+    };
+    xhr.send(`doctor=${selectedDoctor}&date=${selectedDate}&time_slot=${selectedTimeSlot}`);
+}
+
+      </script>
+</body>
+</html>

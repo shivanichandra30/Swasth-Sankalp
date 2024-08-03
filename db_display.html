@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <!-- Dashboard header content goes here -->
+    </header>
+
+    <main>
+        <section id="appointments">
+            <h2>Your Appointments</h2>
+            <!-- Display appointments based on the selected doctor, date, and time slot -->
+            <p id="appointmentDetails"></p>
+        </section>
+
+        <!-- Add more sections for other dashboard features as needed -->
+    </main>
+
+    <footer>
+        <!-- Dashboard footer content goes here -->
+    </footer>
+
+    <script>
+        // Function to retrieve selected options from the URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Retrieve selected options from the URL parameters
+        const selectedDoctor = getUrlParameter('doctor');
+        const selectedDate = getUrlParameter('date');
+        const selectedTimeSlot = getUrlParameter('timeSlot');
+    
+        // Display selected appointment details on the dashboard
+        const appointmentDetailsElement = document.getElementById('appointmentDetails');
+        if (selectedDoctor && selectedDate && selectedTimeSlot) {
+            // Simulated appointment data (replace with actual data from the server)
+            const appointments = [
+                { patient: 'John Doe', time: '09:00 AM' },
+                { patient: 'Jane Smith', time: '10:30 AM' },
+                // Add more appointments as needed
+            ];
+    
+            // Filter appointments based on the selected criteria
+            const filteredAppointments = appointments.filter(appointment =>
+                appointment.time === selectedTimeSlot && appointment.date === selectedDate && appointment.doctor === selectedDoctor
+            );
+    
+            if (filteredAppointments.length > 0) {
+                const appointmentsList = document.createElement('ul');
+                filteredAppointments.forEach(appointment => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Patient: ${appointment.patient}, Time: ${appointment.time}`;
+                    appointmentsList.appendChild(listItem);
+                });
+    
+                appointmentDetailsElement.appendChild(appointmentsList);
+            } else {
+                appointmentDetailsElement.innerHTML = '<p>No appointments for the selected criteria.</p>';
+            }
+        } else {
+            appointmentDetailsElement.innerHTML = '<p>No appointment details available.</p>';
+        }
+    </script>
+    
+</body>
+</html>

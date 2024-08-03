@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sample.css">
+    <title>HealthCare</title>
+</head>
+<body>
+    <header>
+        <div id="header">
+          <div class="header-logo">
+            <img src="images/SwasthsankalpLogo.png" alt="LOGO Here" id="LOGO" />
+          </div>
+          <div class="header-list">
+            <nav class="header-list-nav">
+              <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a >Specialities</a></li>
+                <li><a >Procedures</a></li>
+                <li><a href="info.html">Insurance</a></li>
+                <li><a >About Us</a></li>
+              </ul>
+            </nav>
+            <div class="header-list-icon">
+              <a href=""><i class="fa fa-search"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        <div class="container">
+            <h2>Book a Sample Collection Appointment</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+    
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+    
+                <label for="sampleType">Type of Sample:</label>
+                <select id="sampleType" name="sampleType" required>
+                    <option value="" disabled selected>Select sample type</option>
+                    <option value="blood">Blood Sample</option>
+                    <option value="urine">Urine Sample</option>
+                    <option value="ecg">ECG</option>
+                </select>
+    
+                <label for="date">Select a Date:</label>
+                <input type="date" id="date" name="date" required>
+    
+                <label for="timeSlot">Select a Time Slot:</label>
+                <input type="time" id="timeSlot" name="timeSlot" required>
+    
+                <button type="submit" onclick="bookSlot(event)">Book Slot</button>
+            </form>
+        </div>
+<br><br>
+        <section id="newsletter">
+            <div class="newsletter-text">
+              <h3>Sign Up For Newsletters</h3>
+              <h5>get e-mail updates about out latest shop and <span>special offers</span></h5>
+            </div>
+            <div class="form">
+              <input type="email" placeholder="Your email address" id="email-address-input">
+              <button>Sign Up</button>
+            </div>
+          </section>    
+      </main>
+       <script>    
+        function bookSlot(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+      
+          // Display a confirmation dialog
+          var isConfirmed = window.confirm('You slot is booked successfully!!');
+      
+          // Check if the user clicked OK
+          if (isConfirmed) {
+            // Redirect to dashboard.html
+            window.location.href = 'dashboard.html';
+          }
+        }
+       </script>  
+</body>
+</html>
